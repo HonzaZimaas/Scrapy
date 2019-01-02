@@ -1,7 +1,6 @@
 import scrapy
 from scrapy.loader import ItemLoader
 
-from web_scraping.web_scraping.items import WebScrapingItem
 
 
 class ItemScrapper(scrapy.Spider):
