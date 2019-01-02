@@ -22,9 +22,9 @@ class SeznamScrapper(scrapy.Spider):
                 'headline': article.css('a.link.link--show-visited.timeline-article__title::text').extract_first(),
                 'headlineUrl': article.css(
                     'a.link.link--show-visited.timeline-article__title::attr(href)').extract_first().split('?')[0],
-                "countOfLikes": article.css('span.timeline-article-footer__vote-count').extract()[1]
+                "countOfLikes": article.css('span.timeline-article-footer__vote-count::text').extract()[1]
             }
-            self.logger.info('%s articles was scrapped')
+            self.logger.info('%s articles was scrapped', len(articles))
 
     def save_document_object_model(self, response):
         file_name = self.name + '.html'
