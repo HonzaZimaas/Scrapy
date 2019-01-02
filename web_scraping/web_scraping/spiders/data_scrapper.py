@@ -16,7 +16,7 @@ class DataScrapper(scrapy.Spider):
             }
 
         next_page = response.css('li.next a::attr(href)').extract_first()
-        print(next_page)
+
         if next_page is not None:
             yield response.follow(next_page, callback=self.parse)
 
