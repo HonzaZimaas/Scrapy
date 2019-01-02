@@ -10,3 +10,4 @@ class WebScrapingItem(scrapy.Item):
     author = scrapy.Field()
     tags = scrapy.Field()
     pass
+
