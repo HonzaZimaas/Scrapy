@@ -1,8 +1,8 @@
 import scrapy
 
 
-class MultiplePageScrapper(scrapy.Spider):
-    name = "MultiplePageScrapper"
+class Example03(scrapy.Spider):
+    name = "Example03"
 
     allowed_domains = ['https://scrapy.org']
 
@@ -12,14 +12,15 @@ class MultiplePageScrapper(scrapy.Spider):
             'https://scrapy.org/download/',
             'https://scrapy.org/community/',
             'https://scrapy.org/resources/',
-            'https://example.com'
+            'https://example.com/',
+            'https://scrapy.org/resources/',
         ]
         for url in urls:
-            yield scrapy.Request(url=url, callback=self.parse)
+            yield scrapy.Request(url=url, callback=self.parse, dont_filter=True)
 
     def parse(self, response):
         title = response.selector.xpath('//title/text()').extract_first()
 
-        filename = 'MultiplePageScrapper.txt'
+        filename = 'Example03.txt'
         with open(filename, 'at') as f:
             f.write(title + '\n')
