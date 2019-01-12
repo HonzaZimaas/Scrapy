@@ -1,8 +1,8 @@
 import scrapy
 
 
-class DataScrapper(scrapy.Spider):
-    name = "DataScrapper"
+class Example04(scrapy.Spider):
+    name = "Example04"
     start_urls = [
         'http://quotes.toscrape.com/'
     ]
