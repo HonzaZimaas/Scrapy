@@ -1,8 +1,8 @@
 import scrapy
 
 
-class SeznamScrapper(scrapy.Spider):
-    name = "SeznamScrapper"
+class Example09(scrapy.Spider):
+    name = "Example09"
 
     start_urls = ['https://seznam.cz/']
 

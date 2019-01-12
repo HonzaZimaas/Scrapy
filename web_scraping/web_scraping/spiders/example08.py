@@ -3,8 +3,8 @@ from scrapy.loader import ItemLoader
 
 
 
-class ItemScrapper(scrapy.Spider):
-    name = "itemScrapper"
+class Example08(scrapy.Spider):
+    name = "Example08"
 
     start_urls = [
         'http://quotes.toscrape.com/'

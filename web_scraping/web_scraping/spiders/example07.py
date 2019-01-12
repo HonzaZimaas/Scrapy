@@ -1,8 +1,8 @@
 import scrapy
 
 
-class LoginScrapper(scrapy.Spider):
-    name = 'LoginScrapper'
+class Example07(scrapy.Spider):
+    name = 'Example07'
 
     start_urls = ['http://quotes.toscrape.com/login']
 
