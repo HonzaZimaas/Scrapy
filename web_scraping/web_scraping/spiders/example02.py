@@ -1,15 +1,15 @@
 import scrapy
 
 
-class WebScrapperTitle(scrapy.Spider):
-    name = "WebScrapperTitle"
+class Example02(scrapy.Spider):
+    name = "Example02"
 
     start_urls = [
         'http://scrapy.org'
     ]
 
     def parse(self, response):
-        filename = 'WebScrapperTitle.txt'
+        filename = 'Example02_ScrapingTitle.txt'
         title = response.xpath('//title/text()').extract_first()
 
         with open(filename, 'wt') as f:
