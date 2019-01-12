@@ -1,8 +1,8 @@
 import scrapy
 
 
-class CssSelectors(scrapy.Spider):
-    name = "CssSelectors"
+class Example05(scrapy.Spider):
+    name = "Example05"
 
     start_urls = [
         'https://scrapy.org/'

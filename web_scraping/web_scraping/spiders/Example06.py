@@ -1,8 +1,8 @@
 import scrapy
 
 
-class XPathSelectors(scrapy.Spider):
-    name = "XPathSelectors"
+class Example06(scrapy.Spider):
+    name = "Example06"
 
     start_urls = [
         'https://scrapy.org/'
