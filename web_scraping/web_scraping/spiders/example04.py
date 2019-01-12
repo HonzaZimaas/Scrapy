@@ -8,7 +8,8 @@ class Example04(scrapy.Spider):
     ]
 
     def parse(self, response):
-        for quote in response.css('div.quote'):
+        list_quotes = response.css('div.quote')
+        for quote in list_quotes:
             yield {
                 'text': quote.css('span.text::text').extract_first(),
                 'author': quote.css('span small::text').extract_first(),
@@ -19,5 +20,3 @@ class Example04(scrapy.Spider):
 
         if next_page is not None:
             yield response.follow(next_page, callback=self.parse)
-
-
