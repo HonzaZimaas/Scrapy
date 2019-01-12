@@ -21,6 +21,6 @@ class Example03(scrapy.Spider):
     def parse(self, response):
         title = response.selector.xpath('//title/text()').extract_first()
 
-        filename = 'Example03.txt'
+        filename = 'Example03_ScrapingTitles.txt'
         with open(filename, 'at') as f:
             f.write(title + '\n')
