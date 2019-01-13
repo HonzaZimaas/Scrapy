@@ -18,3 +18,11 @@ class Example07(scrapy.Spider):
             self.logger.error("Login failed")
             return
         self.logger.info("Login succeed")
+
+        list_quotes = response.css('div.quote')
+        for quote in list_quotes:
+            yield {
+                'text': quote.css('span.text::text').extract_first(),
+                'author': quote.css('span small::text').extract_first(),
+                'tags': quote.css('div.tags a.tag::text').extract(),
+            }
